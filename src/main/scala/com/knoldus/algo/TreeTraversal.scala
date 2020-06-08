@@ -3,8 +3,8 @@ package com.knoldus.algo
 case class Node(left: Option[Node], data: Int, right: Option[Node])
 
 object Traversal {
-  def inorderTraversal(tree: Node): Any = {
-    def innerInOrder(tree: Node): Any = {
+  def inorderTraversal(tree: Node): Unit = {
+    def innerInOrder(tree: Node): Unit = {
       if (tree.left.isDefined) innerInOrder(tree.left.get)
       print(tree.data + " ")
       if (tree.right.isDefined) innerInOrder(tree.right.get)
@@ -12,8 +12,8 @@ object Traversal {
     innerInOrder(tree)
   }
 
-  def preOrderTraversal(tree: Node): Any = {
-    def innerPreOrder(tree: Node): Any = {
+  def preOrderTraversal(tree: Node): Unit = {
+    def innerPreOrder(tree: Node): Unit = {
       print(tree.data + " ")
       if (tree.left.isDefined) innerPreOrder(tree.left.get)
       if (tree.right.isDefined) innerPreOrder(tree.right.get)
@@ -21,8 +21,8 @@ object Traversal {
     innerPreOrder(tree)
   }
 
-  def postOrderTraversal(tree: Node): Any = {
-    def innerPostOrder(tree: Node): Any = {
+  def postOrderTraversal(tree: Node): Unit = {
+    def innerPostOrder(tree: Node): Unit = {
       if (tree.left.isDefined) innerPostOrder(tree.left.get)
       if (tree.right.isDefined) innerPostOrder(tree.right.get)
       print(tree.data + " ")
