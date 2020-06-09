@@ -1,7 +1,5 @@
 package com.knoldus.algo
 
-case class Node(left: Option[Node], data: Int, right: Option[Node])
-
 object Traversal {
   def inorderTraversal(tree: Node): Unit = {
     def innerInOrder(tree: Node): Unit = {
