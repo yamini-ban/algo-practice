@@ -25,4 +25,5 @@ object LongestCommonSubsequenceLength extends App {
   val str3 = "AGGTAB"
   val str2 = "GXTXAYB"
   println(getLongestCommonSubsequenceLength(str1, str2))
+  val x = Seq(1,2)
 }

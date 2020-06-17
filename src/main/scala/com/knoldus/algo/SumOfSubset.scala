@@ -14,28 +14,22 @@ class SumOfSubset {
     innerSubset(array.toList, sum)
   }
 
-  /*
-  def check2(l: Int, y:Int) =   l == y
-  def checkSum2(list: List[Int], y: Int): Boolean = {
-    def checkbox(list: List[Int], n:Int): Boolean = {
+  def sumOfSubsetIsZeroExists(array: Array[Int]): Boolean = {
+    def innerChecker(list: List[Int], sum: Int): Boolean = {
       list match {
+        case first :: rest if first+sum != 0 => innerChecker(rest, sum + first) || innerChecker(rest, sum)
+        case first :: _ if first+sum == 0 => true
         case Nil => false
-        case x:: xs =>
-          if(x == y) true else if(check2(x+n, y)) {
-            true
-          }
-          else if(checkSum2(xs, y))
-            true
-          else checkbox(xs, x + n)
       }
     }
-    checkbox(list, 0)
+    innerChecker(array.toList, 0)
   }
-*/
 
 }
 
 object Main extends App {
-  val array = Array(10,1,2,-3,3,4,2,6)
-  println(new SumOfSubset().subSetExistsWithGivenPositiveSum(array, 9))
+  val array = Array(-1,-10,3,3,4,2,6)
+  val obj = new SumOfSubset
+//  println(obj.subSetExistsWithGivenPositiveSum(array, 9))
+  println(obj.sumOfSubsetIsZeroExists(array))
 }
